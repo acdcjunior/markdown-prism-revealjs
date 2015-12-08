@@ -9,6 +9,7 @@ code[class*="language-"],
 pre[class*="language-"] {
 	color: black;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-transform: none;
 	direction: ltr;
 	text-align: left;
 	white-space: pre;
@@ -69,13 +70,13 @@ pre[class*="language-"] {
 /* Inline code */
 :not(pre) > code[class*="language-"] {
 	position: relative;
-	padding: .2em;
+	padding: .1em .2em;
 	-webkit-border-radius: 0.3em;
 	-moz-border-radius: 0.3em;
 	-ms-border-radius: 0.3em;
 	-o-border-radius: 0.3em;
 	border-radius: 0.3em;
-	color: #c92c2c;
+	color: purple;
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	display: inline;
 	white-space: normal;
@@ -117,17 +118,20 @@ pre[class*="language-"]:after {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #7D8B99;
+	color: #008000;
 }
 
 .token.punctuation {
 	color: #5F6364;
 }
 
+.token.number {
+    color: purple;
+}
+
 .token.property,
 .token.tag,
 .token.boolean,
-.token.number,
 .token.function-name,
 .token.constant,
 .token.symbol,
@@ -135,14 +139,16 @@ pre[class*="language-"]:after {
 	color: #c92c2c;
 }
 
+.token.string,
+.token.char {
+	color: #0077dd;
+}
 .token.selector,
 .token.attr-name,
-.token.string,
-.token.char,
 .token.function,
 .token.builtin,
 .token.inserted {
-	color: #2f9c0a;
+	color: #a31515;
 }
 
 .token.operator,
@@ -155,11 +161,15 @@ pre[class*="language-"]:after {
 
 .token.atrule,
 .token.attr-value,
-.token.keyword,
-.token.class-name {
-	color: #1990b8;
+.token.keyword {
+	color: #008;
 }
 
+.token.class-name {
+	color: #00f;
+}
+
+.token.annotation,
 .token.regex,
 .token.important {
 	color: #e90;
@@ -247,19 +257,21 @@ pre[data-line] {
 	padding: inherit 0;
 	margin-top: 1em; /* Same as .prism’s padding-top */
 
-	background: hsla(24, 20%, 50%,.08);
-	background: -moz-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-	background: -webkit-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-	background: -o-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-	background: linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-	
+	/*background: hsla(24, 20%, 50%,.08);*/
+	background: hsla(60, 100%, 50%, 0.25);
+	/*background: -moz-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));*/
+	/*background: -webkit-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));*/
+	background: -webkit-linear-gradient(left, hsla(60, 100%, 50%,.1) 20%, hsla(60, 100%, 50%,.2) 45%, hsla(60, 100%, 50%,.5));
+	/*background: -o-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));*/
+	/*background: linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));*/
+
 	pointer-events: none;
 	
 	line-height: inherit;
 	white-space: pre;
 }
 
-	.line-highlight:before,
+	.line-highlight:before:not(.line-numbers),
 	.line-highlight[data-end]:after {
 		content: attr(data-start);
 		position: absolute;
