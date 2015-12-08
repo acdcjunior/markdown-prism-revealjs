@@ -231,7 +231,7 @@
 						// file protocol yields status code 0 (useful for local debug, mobile applications etc.)
 						if ( ( xhr.status >= 200 && xhr.status < 300 ) || xhr.status === 0 ) {
 
-							section.outerHTML = slidify( xhr.responseText, {
+							section.outerHTML = slidify( processMarkdownShortcuts(xhr.responseText), {
 								separator: section.getAttribute( 'data-separator' ),
 								verticalSeparator: section.getAttribute( 'data-separator-vertical' ),
 								notesSeparator: section.getAttribute( 'data-separator-notes' ),
@@ -388,7 +388,6 @@
 	return {
 
 		initialize: function() {
-			console.log("initializing ", document.querySelectorAll( '[data-markdown]').length);
 			processSlides();
 			convertSlides();
 		},
