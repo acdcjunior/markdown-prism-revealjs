@@ -1,0 +1,8 @@
+# Bower
+bower_components/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
