@@ -13,4 +13,7 @@ This is a [reveal.js](https://github.com/hakimel/reveal.js) template I use for m
 
 That's it.
 
-For printing, only [decktape](https://github.com/astefanutti/decktape) will do the job. (The CSS for printing did not work at all, so I removed it.)
+**IMPORTANT:** As it uses external markdown, you'll have to run the `index.html` file through a web server (or
+disable the strict origin policy for local files at your browser). See details at [running.md](running.md). 
+
+For printing, only [decktape](https://github.com/astefanutti/decktape) will do the job (the CSS style for printing did not work at all, so I removed it.)
