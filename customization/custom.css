@@ -1,0 +1,21 @@
+img {
+    border: 0 !important;
+    box-shadow: 0 0 0 !important;
+}
+
+.reveal section pre code {
+    max-height: none;
+}
+
+.reveal section pre {
+    width: 100%;
+    max-height: none;
+}
+
+.reveal section > ul > li > pre {
+    width: 96%;
+}
+
+.contorno {
+    text-shadow: 4px 0 0 #fff, -4px 0 0 #fff, 0 4px 0 #fff, 0 -4px 0 #fff, 2px 2px #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff !important;
+}
