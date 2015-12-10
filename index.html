@@ -18,7 +18,7 @@
 		<![endif]-->
 
 		<link rel="stylesheet" href="prismjs/prism.css">
-		<link rel="stylesheet" href="customization/custom.css">
+		<link rel="stylesheet" href="custom.css">
 	</head>
 	<body>
 		<div class="reveal">
@@ -61,7 +61,7 @@
 				dependencies: [
 					{ src: revealjsFolder + 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: revealjsFolder + 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'customization/markdown-shortcuts.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'markdown-shortcuts.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'modified-markdown-plugin.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'prismjs/prism.js', async: true, condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'prismjs/prism-setup.js', async: true, condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
