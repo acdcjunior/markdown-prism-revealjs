@@ -32,5 +32,8 @@ disable the strict origin policy for local files at your browser). See details a
 - Run `bower update`
 - Copy `bower_component/markdown-prism-revealjs/index.html` to your folder
 - Create a markdown (`.md`) file that will be your presentation
+    - by (our) default, `---` marks a new slide forward, `-- --` marks a new slide downward and `???` marks the notes
+    - this can be changed as a regular reveal.js slide would
+    - check the [EXAMPLE-PRESENTATION.md](EXAMPLE-PRESENTATION.md) for a demo
 - Edit the `index.html`'s `section` tag, setting its `data-markdown` attribute to the `.md` file of your presentation
 - Run `index.html`!

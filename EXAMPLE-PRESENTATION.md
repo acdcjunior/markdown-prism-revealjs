@@ -14,9 +14,20 @@ public class SomeClass {
 }
 ```#[3]
 
+???
+
+Notes for slide one
+
 -- --
 <!-- .slide: data-background-color="red" -->
 
 # Slide Below
 
-Yay!
+Yay! This has `red` background!
+
+???
+
+Notes for slide two
+---
+
+# Slide three is not below
