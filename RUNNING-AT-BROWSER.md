@@ -1,3 +1,8 @@
+How to run this presentation at a browser.
+
+Due to the external markdown file, to run it, you'll need to either setup a web server or run the browser with the strict origin policy disabled.
+
+
 # Disabling strict origin policy (so runnning a web server is not needed)
 
 - Chrome
