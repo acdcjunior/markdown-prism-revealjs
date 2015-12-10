@@ -23,8 +23,8 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-                <section data-markdown="example.md"
-                         data-separator="^---"  
+                <section data-markdown="EXAMPLE-PRESENTATION.md"
+                         data-separator="^---"
                          data-separator-vertical="^-- --"
                          data-separator-notes="^\?\?\?"  
                          data-charset="utf-8">
@@ -64,7 +64,7 @@
 					{ src: 'markdown-shortcuts.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'modified-markdown-plugin.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'prismjs/prism.js', async: true, condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'prismjs/prism-setup.js', async: true, condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'prismjs-revealjs-setup.js', async: true, condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: revealjsFolder + 'plugin/zoom-js/zoom.js', async: true },
 					{ src: revealjsFolder + 'plugin/notes/notes.js', async: true }
 				]
