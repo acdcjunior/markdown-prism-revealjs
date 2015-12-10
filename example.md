@@ -6,6 +6,7 @@
 Code:
 
 ```java
+@ExampleAnnotation(value="123")
 public class SomeClass {
     static {
         System.out.println("some string"); // some comment
