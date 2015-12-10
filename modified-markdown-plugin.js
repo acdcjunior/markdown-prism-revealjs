@@ -384,12 +384,25 @@
 
 	}
 
+	function moveToOriginalSlide(originalHash) {
+		var emptyHashes = ["", "#", "#/"];
+		if (emptyHashes.indexOf(originalHash.trim()) !== -1) {
+			Reveal.slide(0);
+		} else {
+			window.location.hash = originalHash;
+		}
+	}
+
 	// API
 	return {
 
 		initialize: function() {
+			var originalHash = window.location.hash;
 			processSlides(function() {
 				convertSlides();
+				Reveal.layout();
+				moveToOriginalSlide(originalHash);
+				MarkdownPrismRevealJS.prismSetup();
 			});
 		},
 
