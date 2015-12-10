@@ -22,13 +22,15 @@ disable the strict origin policy for local files at your browser). See details a
 
 - Create a folder
 - Create a `bower.json` file at it, pointing to this repo, such as:
-    {
-      "name": "my-presentation",
-      "version": "1.0.0",
-      "dependencies": {
+```json
+{
+    "name": "my-presentation",
+    "version": "1.0.0",
+    "dependencies": {
         "markdown-prism-revealjs": "https://github.com/acdcjunior/markdown-prism-revealjs.git"
-      }
     }
+}
+```
 - Run `bower update`
 - Copy `bower_component/markdown-prism-revealjs/index.html` to your folder
 - Create a markdown (`.md`) file that will be your presentation
