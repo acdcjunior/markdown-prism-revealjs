@@ -400,7 +400,7 @@
 			var originalHash = window.location.hash;
 			processSlides(function() {
 				convertSlides();
-				Reveal.layout();
+				Reveal.sync();
 				moveToOriginalSlide(originalHash);
 				MarkdownPrismRevealJS.prismSetup();
 			});
