@@ -17,7 +17,7 @@
 		<script src="bower_components/reveal.js/lib/js/html5shiv.js"></script>
 		<![endif]-->
 
-		<link rel="stylesheet" href="customization/prismjs/prism.css">
+		<link rel="stylesheet" href="prismjs/prism.css">
 		<link rel="stylesheet" href="customization/custom.css">
 	</head>
 	<body>
@@ -63,8 +63,8 @@
 					{ src: revealjsFolder + 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'customization/markdown-shortcuts.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'customization/modified-markdown-plugin/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'customization/prismjs/prism.js', async: true, condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'customization/prismjs/prism-setup.js', async: true, condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'prismjs/prism.js', async: true, condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'prismjs/prism-setup.js', async: true, condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: revealjsFolder + 'plugin/zoom-js/zoom.js', async: true },
 					{ src: revealjsFolder + 'plugin/notes/notes.js', async: true }
 				]
