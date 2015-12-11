@@ -393,6 +393,14 @@
 		}
 	}
 
+	function removeHiddenSlides() {
+		var slidesToRemove = document.querySelectorAll('.hidden-slide');
+		for (var i = 0; i < slidesToRemove.length; i++) {
+			var slideToRemove = slidesToRemove[i];
+			slideToRemove.parentNode.removeChild(slideToRemove);
+		}
+	}
+
 	// API
 	return {
 
@@ -400,6 +408,7 @@
 			var originalHash = window.location.hash;
 			processSlides(function() {
 				convertSlides();
+				removeHiddenSlides();
 				Reveal.sync();
 				moveToOriginalSlide(originalHash);
 				MarkdownPrismRevealJS.prismSetup();

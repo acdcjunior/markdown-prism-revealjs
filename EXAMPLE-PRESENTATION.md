@@ -30,8 +30,8 @@ Yay! This has `red` background!
 
 Notes for slide two
 ---
-
-# Slide three
+^^/h/
+# Slide three is hidden
 
 ---
 # Slide four has `code` in the title

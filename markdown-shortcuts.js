@@ -72,9 +72,20 @@ var processMarkdownShortcuts = (function () {
         return markdown.replace(regexFragment, fragmentReplace);
     }
 
+    function replaceHideSlideFragments(markdown) {
+        var regexFragment = /^\^\^\/h\/(\r?\n)/gm;
+        var fragmentReplace = "<!-- .slide: class=\" hidden-slide \" -->$1";
+        return markdown.replace(regexFragment, fragmentReplace);
+    }
+
     return function (markdown) {
-        var fragmentosEmHeadersOuBulletsJahSubstituidos = replaceHeaderOrBulletFragments(markdown);
-        var fragmentosIndependentesJahSubstituidos = replaceStandaloneFragments(fragmentosEmHeadersOuBulletsJahSubstituidos);
-        return replaceLineHighlightFragments(fragmentosIndependentesJahSubstituidos);
+        var replaceFragmentFunctions = [replaceHeaderOrBulletFragments, replaceStandaloneFragments,
+                                        replaceLineHighlightFragments, replaceHideSlideFragments];
+        var modifiedMarkdown = markdown;
+        replaceFragmentFunctions.forEach(function (f) {
+            modifiedMarkdown = f(modifiedMarkdown);
+        });
+        return modifiedMarkdown;
     };
+
 })();
