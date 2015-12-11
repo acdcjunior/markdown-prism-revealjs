@@ -5,7 +5,7 @@ var processMarkdownShortcuts = (function () {
 
     /**
      * Shortcut:
-     *    #/1/
+     *    ^^/1/
      *
      * Where 1 is a number, will be replaced with:
      *    &lt;!-- .element: class="fragment" data-fragment-index="1" -->
@@ -13,15 +13,14 @@ var processMarkdownShortcuts = (function () {
      * The number (1 in the example) will be the fragment index.
      *
      * AT BULLETS OR HEADERS:
-     *     If the #/1/ is used at the end of a line whose first char is
+     *     If the ^^/1/ is used at the end of a line whose first char is
      * a - (bullet) or # (header), optionally preceded by tabs or spaces,
      * the fragment will be applied to the whole line, that is, to the
      * bullet or header..
      *
-     * https://regex101.com/r/bN0bJ4/1
      */
     function replaceHeaderOrBulletFragments(markdown) {
-        var regexFragment = /(^[ \t]*(?:-|#+)[ \t])([^\n]+)#\/(\d+)\/([ \t\r\n])/gm;
+        var regexFragment = /(^[ \t]*(?:-|#+)[ \t])([^\n]+)\^\^\/(\d+)\/([ \t\r\n])/gm;
         var fragmentReplace = "$1<!-- .element: class=\"fragment\" data-fragment-index=\"$3\" -->$2$4";
 
         return markdown.replace(regexFragment, fragmentReplace);
@@ -29,7 +28,7 @@ var processMarkdownShortcuts = (function () {
 
     /**
      * Shortcut:
-     *    #/1/  or  #!/1/
+     *    ^^/1/  or  ^^!/1/
      *
      * Where 1 is a number, will be replaced with:
      *    &lt;!-- .element: class="fragment" data-fragment-index="1" -->
@@ -37,20 +36,22 @@ var processMarkdownShortcuts = (function () {
      * The number (1 in the example) will be the fragment index.
      *
      * ANYWHERE:
-     *     If the #/1/ is used at somewhere other than the specified above, it will
+     *     If the ^^/1/ is used at somewhere other than the specified above, it will
      * add the fragment literally where it is.
-     *     If you use an exclamation point: #!/1/ it will be applied literally at
+     *     If you use an exclamation point: ^^!/1/ it will be applied literally at
      * where it is, even if the line starts with a - or #.
      */
     function replaceStandaloneFragments(markdown) {
-        var regexFragment = /#!?\/(\d+)\/(\r?\n)/gm;
+        var regexFragment = /\^\^!?\/(\d+)\/(\r?\n)/gm;
         var fragmentReplace = "<!-- .element: class=\"fragment\" data-fragment-index=\"$1\" -->$2";
 
         return markdown.replace(regexFragment, fragmentReplace);
     }
 
     /**
-     * ```#[1-2, 5, 9-20]
+     * ```
+     * ^^[1-2, 5, 9-20]
+     *
      * Highlighting lines at code blocks.
      *
      * Example:
@@ -60,12 +61,13 @@ var processMarkdownShortcuts = (function () {
      *    private int stuff;
      *    private String pamonha;
      * }
-     * ```#[2, 3]
+     * ```
+     * ^^[2, 3]
      *
      * http://prismjs.com/plugins/line-highlight/
      */
     function replaceLineHighlightFragments(markdown) {
-        var regexFragment = /^```#\[(\d+(?:\s*,\s*\d+)*)](\r?\n)/gm;
+        var regexFragment = /^```\s*(?:\r?\n)\^\^\[(\d+(?:\s*,\s*\d+)*)](\r?\n)/gm;
         var fragmentReplace = "```$2<!-- .element: data-line=\"$1\" -->$2";
         return markdown.replace(regexFragment, fragmentReplace);
     }

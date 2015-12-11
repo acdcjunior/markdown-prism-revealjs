@@ -1,7 +1,7 @@
 # Example `Slide`
 
 - Bullet
-    - fragment #/1/
+    - fragment ^^/1/
 
 Code:
 
@@ -12,7 +12,8 @@ public class SomeClass {
         System.out.println("some string"); // some comment
     }
 }
-```#[3]
+```
+^^[3]
 
 ???
 
@@ -30,4 +31,11 @@ Yay! This has `red` background!
 Notes for slide two
 ---
 
-# Slide three is not below
+# Slide three
+
+---
+# Slide four has `code` in the title
+
+1. Numbered list
+2. Second item is a fragment ^^/1/
+3. Third item is a fragment as well ^^/2/
