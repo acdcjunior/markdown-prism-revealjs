@@ -20,22 +20,12 @@ disable the strict origin policy for local files at your browser). See details a
 
 # How to use
 
-- Create a folder
-- Create a `bower.json` file at it, pointing to this repo, such as:
-```json
-{
-    "name": "my-presentation",
-    "version": "1.0.0",
-    "dependencies": {
-        "markdown-prism-revealjs": "https://github.com/acdcjunior/markdown-prism-revealjs.git"
-    }
-}
-```
-- Run `bower update`
-- Copy `bower_component/markdown-prism-revealjs/index.html`, `prismjs/`, `custom.css`, `markdown-shortcuts.js`, `modified-markdown-plugin.js` and `prismjs-revealjs-setup.js` to your folder
-- Create a markdown (`.md`) file that will be your presentation
+- Clone this rempo
+- Run `npm install`
+- Edit [EXAMPLE-PRESENTATION.md](EXAMPLE-PRESENTATION.md)
+	- Or create other markdown (`.md`) file that will be your presentation
+		- Edit the `index.html`'s `section` tag, setting its `data-markdown` attribute to the `.md` file of your presentation
     - by (our) default, `---` marks a new slide forward, `-- --` marks a new slide downward and `???` marks the notes
     - this can be changed as a regular reveal.js slide would
-    - check the [EXAMPLE-PRESENTATION.md](EXAMPLE-PRESENTATION.md) for a demo
-- Edit the `index.html`'s `section` tag, setting its `data-markdown` attribute to the `.md` file of your presentation
-- Run `index.html`!
+- Run `npm start`: it will start a `http-server`	
+- Visit [http://127.0.0.1:3000](http://127.0.0.1:3000)
