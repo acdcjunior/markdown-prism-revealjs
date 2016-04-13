@@ -48,13 +48,14 @@ Due to the external markdown file, to run it, you'll need to either setup a web 
         about:config -> security.fileuri.strict_origin_policy -> false
 
 
-		### Using web servers:
+### Using web servers:
 
 - POWERSHELL:
 
         Add-Type -AssemblyName "System.Web";$Hso=New-Object Net.HttpListener;$Hso.Prefixes.Add("http://localhost:8000/");$Hso.Start();While ($Hso.IsListening){$HC=$Hso.GetContext();$HRes=$HC.Response;$HRes.Headers.Add("Content-Type",[System.Web.MimeMapping]::GetMimeMapping($HC.Request.RawUrl));$Stream=[System.IO.File]::OpenRead((Join-Path $Pwd ($HC.Request.RawUrl)));$HRes.ContentLength64=$Stream.Length;$Stream.CopyTo($HRes.OutputStream);$Stream.Close();$HRes.Close()};$Hso.Stop()
 
-- PHP and NODE are very simple to use.
+- PHP and NODE are also very simple to use.
+ 	- If you use `npm start`, it actually uses node's `http-server` package
 
 More at: https://gist.github.com/willurd/5720255
 
