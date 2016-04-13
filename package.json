@@ -4,8 +4,7 @@
   "description": "markdown + prism + reveal.js",
   "main": "",
   "dependencies": {
-    "prismjs": "^1.4.1",
-    "reveal.js": "^3.2.0"
+    "reveal.js": "~3.2.0"
   },
   "devDependencies": {
     "http-server": "^0.9.0"
