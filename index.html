@@ -16,12 +16,12 @@
 		<link rel="stylesheet" href="node_modules/reveal.js/css/theme/white.css" id="theme">
 
 		<link rel="stylesheet" href="prismjs/prism.css">
-		<link rel="stylesheet" href="custom.css">
+		<link rel="stylesheet" href="css/custom.css">
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-                <section data-markdown="EXAMPLE-PRESENTATION.md"
+                <section data-markdown="PRESENTATION.md"
                          data-separator="^---"
                          data-separator-vertical="^-- --"
                          data-separator-notes="^\?\?\?"  
@@ -35,7 +35,9 @@
             var revealjsFolder = "node_modules/reveal.js/";
 
             var mdPrismRevealFolder = "js/";
-            // var mdPrismRevealFolder = "node_modules/markdown-prism-revealjs/";
+            // var mdPrismRevealFolder = "node_modules/markdown-prism-revealjs/js/";
+			
+			var customPrismFolder = "prismjs/";
 
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
@@ -61,14 +63,15 @@
 
 				// Optional reveal.js plugins
 				dependencies: [
-					{ src: revealjsFolder + 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: revealjsFolder + 'lib/js/classList.js',              condition: function() { return !document.body.classList; } },
+					{ src: revealjsFolder + 'plugin/zoom-js/zoom.js',           async: true },
+					{ src: revealjsFolder + 'plugin/notes/notes.js',            async: true },
+					
 					{ src: revealjsFolder + 'plugin/markdown/marked.js',        condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: mdPrismRevealFolder + 'markdown-shortcuts.js',       condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: mdPrismRevealFolder + 'modified-markdown-plugin.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: mdPrismRevealFolder + 'prismjs/prism.js',            condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: mdPrismRevealFolder + 'prismjs-revealjs-setup.js',   condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: revealjsFolder + 'plugin/zoom-js/zoom.js', async: true },
-					{ src: revealjsFolder + 'plugin/notes/notes.js', async: true }
+					{ src: customPrismFolder + 'prism.js',                      condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: mdPrismRevealFolder + 'prismjs-revealjs-setup.js',   condition: function() { return !!document.querySelector( '[data-markdown]' ); } }
 				]
 			});
 		</script>
