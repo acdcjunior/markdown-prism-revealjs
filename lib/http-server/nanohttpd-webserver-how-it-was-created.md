@@ -13,32 +13,34 @@ This requires:
 
         $ cd nanohttpd-master/webserver
 
-# Edit file: src/main/java/fi/iki/elonen/SimpleWebServer.java
+# Change some code
 
-	- Include at line 171:
-	
-		openLocalHostAtBrowser(port);
+- Edit file: `src/main/java/fi/iki/elonen/SimpleWebServer.java`
+- 
+    - Include at line **171**:
 
-	- Include at lines (now) 175-192:
+            openLocalHostAtBrowser(port);
+
+    - Include at lines (now) **175-192**:
 	
-		private static void openLocalHostAtBrowser(final int port) {
-			try {
-				new Thread() {
-					@Override
-					public void run() {
-						try {
-							String presentationUrl = "http://127.0.0.1:" + port;
-							System.out.println("Starting default browser at " + presentationUrl + "...");
-							java.awt.Desktop.getDesktop().browse(new java.net.URI(presentationUrl));
-						} catch (Exception e) {
-							System.err.println("Error while opening localhost URL at browser: " + e.getMessage());
-						}
-					}
-				}.start();
-			} catch (Exception e) {
-				System.err.println("Error (outside thread) while opening localhost URL at browser: " + e.getMessage());
-			}
-		}
+        	private static void openLocalHostAtBrowser(final int port) {
+        		try {
+        			new Thread() {
+        				@Override
+        				public void run() {
+        					try {
+        						String presentationUrl = "http://127.0.0.1:" + port;
+        						System.out.println("Starting default browser at " + presentationUrl + "...");
+        						java.awt.Desktop.getDesktop().browse(new java.net.URI(presentationUrl));
+        					} catch (Exception e) {
+        						System.err.println("Error while opening localhost URL at browser: " + e.getMessage());
+        					}
+        				}
+        			}.start();
+        		} catch (Exception e) {
+        			System.err.println("Error (outside thread) while opening localhost URL at browser: " + e.getMessage());
+        		}
+        	}
 
 # Run command (to generate bundle)
 
