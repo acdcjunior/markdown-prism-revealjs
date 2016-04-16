@@ -7,11 +7,11 @@ This requires:
 # Download and get to folder
 
 - Download https://github.com/NanoHttpd/nanohttpd/archive/master.zip
-	(`$ git clone https://github.com/NanoHttpd/nanohttpd.git` didnt work well because the tests failed under windows, probably due to some formatting issues)
+    - (`$ git clone https://github.com/NanoHttpd/nanohttpd.git` didn't work well because the tests failed under windows, probably due to some formatting issues)
 - Unzip to `nanohttpd-master/`
 - Go to folder:
 
-	$ cd nanohttpd-master/webserver
+        $ cd nanohttpd-master/webserver
 
 # Edit file: src/main/java/fi/iki/elonen/SimpleWebServer.java
 
