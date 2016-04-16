@@ -1,8 +1,0 @@
-# NPM
-node_modules/
-
-# IDE
-.idea/
-*.iml
-*.ipr
-*.iws
