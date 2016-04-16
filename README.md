@@ -19,9 +19,10 @@ Here are our default "commands":
         - Go to `lib/http-server` folder
         - Run `start-java-http-server.bat` or `start-java-http-server.sh`
         - Open the browser at http://127.0.0.1:5000/ (should have been opened automatically)
-    - **But, why?:** This is needed because the markdown is not in index.html, but in an external file, you'll have to either:
-        - Run the `index.html` file through a web server
-        - Or disable the strict origin policy for local files at your browser
+    - **But, why?**
+    	- This is needed because the markdown is not in index.html, but in an external file, you'll have to either:
+            - Run the `index.html` file through a web server
+            - Or disable the strict origin policy for local files at your browser
         - Check the `lib/http-server` folder for alternatives
 
 # Editing
