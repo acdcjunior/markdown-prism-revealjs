@@ -16,7 +16,7 @@ This requires:
 # Change some code
 
 - Edit file: `src/main/java/fi/iki/elonen/SimpleWebServer.java`
-- 
+
     - Include at line **171**:
 
             openLocalHostAtBrowser(port);
